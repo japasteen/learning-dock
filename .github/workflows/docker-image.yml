@@ -1,0 +1,25 @@
+name: docker-image
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: japasteen@gmail.com
+          password: Jasmine@84
+
+      - name: Build the Docker image
+        run: docker build -t Dockerfile japasteen/myimage:latest .
+
+      - name: Push Docker image to Docker Hub
+        run: docker push japasteen/myimage:latest
