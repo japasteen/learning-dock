@@ -19,7 +19,7 @@ jobs:
           password: Jasmine@84
 
       - name: Build the Docker image
-        run: docker build -t Dockerfile japasteen@gmail.com/myimage:latest .
+        run: docker build -t japasteen@gmail.com/myimage:latest .
 
       - name: Push Docker image to Docker Hub
         run: docker push japasteen@gmail.com/myimage:latest
